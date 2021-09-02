@@ -1,0 +1,26 @@
+import java.util.HashSet;
+public class LongConSeq {
+    public static void main(String[] args) {
+        int[] a={10,30,20,100};
+        HashSet <Integer> red=new HashSet<>();
+        for (int x = 0; x < a.length; x++) {
+            red.add(a[x]);
+        }
+        int LongsubSeq=0;
+        for (int i = 0; i < a.length; i++) {
+            if (!red.contains(a[i]-1)) {
+                int data=a[i];
+                while (red.contains(data)) {
+                    data++;
+
+                }
+                if (LongsubSeq<data-a[i]) {
+                    LongsubSeq=data-a[i];
+                }
+            }
+
+        }
+        System.out.println("logest Seqence is:"+LongsubSeq);
+
+    }
+}
