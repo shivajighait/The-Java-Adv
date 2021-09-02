@@ -1,0 +1,30 @@
+import java.util.*;
+
+public class OneManyWords {
+public static void main(String[]args){
+    int i;
+    int count = 0;
+    Scanner user = new Scanner(System.in);
+    System.out.println("Enter any 5 letters Word");
+    String word = user.nextLine();
+    char[] arr = word.toCharArray();
+    if(word.length()==5){
+      for(int x=0;x<5;x++){
+          for(int j=0;j<5;j++){
+              for(int s =0;s<5;s++){
+                  if(arr[x]!=arr[j] && arr[j]!=arr[s] && arr[j]!=arr[x]){
+             System.out.println(arr[x]+ ""+ arr[j]+""+arr[s]+" ");
+             count++;
+                  }
+
+              }
+          }
+
+      }
+    }else{
+        System.out.println("You enterd more than 5 charachters");
+        System.exit(0);
+    }
+    System.out.println("\n the words are" + arr +"are" +count);
+}
+}
